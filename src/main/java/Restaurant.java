@@ -38,6 +38,14 @@ public class Restaurant {
         return null;
     }
 
+    public int getOrderTotal(List<String> items) {
+        int sum = 0;
+        for(String name: items) {
+           sum += findItemByName(name).getPrice();
+        }
+        return sum;
+    }
+
     public void addToMenu(String name, int price) {
         Item newItem = new Item(name,price);
         menu.add(newItem);
