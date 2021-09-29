@@ -75,4 +75,18 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>Total<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void can_get_the_Order_total_of_the_items_selected(){
+        //WRITE UNIT TEST CASE HERE
+        restaurant.addToMenu("Sweet corn soup",100);
+        restaurant.addToMenu("Vegetable lasagne", 200);
+
+        List<String> selectedItems = new ArrayList<String>();
+        selectedItems.add("Sweet corn soup");
+        selectedItems.add("Vegetable lasagne");
+
+        assertEquals(300, restaurant.getOrderTotal(selectedItems));
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<Total>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
